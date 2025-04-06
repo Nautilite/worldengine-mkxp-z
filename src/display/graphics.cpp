@@ -538,7 +538,7 @@ void ScreenScene::composite() {
   pp.startRender();
 
   glState.viewport.set(IntRect(0, 0, w, h));
-  if (!transparent && !shState->config().transparentDefault) // clear background to black unless transparent
+  if (!transparent || !shState->config().transparentDefault) // clear background to black unless transparent
     gl.ClearColor(0, 0, 0, 1);
   FBO::clear();
   if (!transparent) // restore clearcolor
