@@ -99,6 +99,20 @@ RB_METHOD(WindowRaise) {
   return Qnil;
 }
 
+RB_METHOD(SetBorderless) {
+  bool state;
+  rb_get_args(argc, argv, "b", &state);
+  shState->graphics().setBorderless(state);
+  return Qnil;
+}
+
+RB_METHOD(GetBorderless) {
+  RB_UNUSED_PARAM
+  shState->graphics().getBorderless();
+  return rb_bool_new(state);
+}
+
+
 RB_METHOD(SetTransparent) {
   bool state;
   rb_get_args(argc, argv, "b", &state);
@@ -124,6 +138,8 @@ void modshotwindowBindingInit() {
   _rb_define_module_function(module, "raiseWindow", WindowRaise);
   _rb_define_module_function(module, "transparent", GetTransparent);
   _rb_define_module_function(module, "transparent=", SetTransparent);
+  _rb_define_module_function(module, "borderless", GetBorderless);
+  _rb_define_module_function(module, "borderless=", SetBorderless);
   //_rb_define_module_function(module, "setWindowChromaKey",
   // SetTransparentColor);
 }
