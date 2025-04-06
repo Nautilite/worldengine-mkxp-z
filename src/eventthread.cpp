@@ -786,7 +786,7 @@ void EventThread::requestTerminate() {
   SDL_PushEvent(&event);
 }
 
-bool EventThread::checkBorderless(SDL_Window *win) {
+bool EventThread::getBorderless(SDL_Window *win) {
   Uint32 flags = SDL_GetWindowFlags(win);
   return (flags & SDL_WINDOW_BORDERLESS) != 0;
 }
