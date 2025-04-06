@@ -300,6 +300,8 @@ try { exp } catch (...) {}
 #ifdef __APPLE__
     SET_OPT(preferMetalRenderer, boolean);
 #endif
+    SET_OPT(borderlessDefault, boolean);
+    SET_OPT(transparentDefault, boolean);
     SET_OPT(subImageFix, boolean);
     SET_OPT(enableBlitting, boolean);
     SET_OPT_CUSTOMKEY(integerScaling.active, integerScalingActive, boolean);
