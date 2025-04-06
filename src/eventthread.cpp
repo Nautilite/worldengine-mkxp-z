@@ -805,9 +805,8 @@ void EventThread::requestFullscreenMode(bool mode) {
 void EventThread::requestBorderlessMode(bool mode) {
   if (mode == borderless)
     return;
-  // Im not sure which is valid
-  // self->setBorderlessshState->window(), mode);
-  setBorderless(window, mode);
+  SDL_Event event;
+  setBorderless(event.window, mode);
 }
 
 void EventThread::requestWindowResize(int width, int height) {
