@@ -541,7 +541,7 @@ void ScreenScene::composite() {
   if (!transparent && !shState->config().transparentDefault) // clear background to black unless transparent
     gl.ClearColor(0, 0, 0, 1);
   FBO::clear();
-  if (!transparent && !shState->config().transparentDefault) // restore clearcolor
+  if (!transparent) // restore clearcolor
     gl.ClearColor(0, 0, 0, 0);
 
   Scene::composite();
