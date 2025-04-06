@@ -331,6 +331,8 @@ int main(int argc, char *argv[]) {
     winFlags |= SDL_WINDOW_RESIZABLE;
   if (conf.fullscreen)
     winFlags |= SDL_WINDOW_FULLSCREEN;
+  if (conf.borderlessDefault)
+    winFlags |= SDL_WINDOW_BORDERLESS;
 
 #ifdef GLES2_HEADER
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);

@@ -128,6 +128,7 @@ public:
 
   /* Non-standard extension */
   DECL_ATTR(Fullscreen, bool)
+  DECL_ATTR(Borderless, bool)
   DECL_ATTR(ShowCursor, bool)
   DECL_ATTR(Scale, double)
   DECL_ATTR(Frameskip, bool)

@@ -538,7 +538,7 @@ void ScreenScene::composite() {
   pp.startRender();
 
   glState.viewport.set(IntRect(0, 0, w, h));
-  if (!transparent) // clear background to black unless transparent
+  if (!transparent && !conf.transparentDefault) // clear background to black unless transparent
     gl.ClearColor(0, 0, 0, 1);
   FBO::clear();
   if (!transparent) // restore clearcolor
@@ -1790,6 +1790,14 @@ bool Graphics::getFullscreen() const {
 
 void Graphics::setFullscreen(bool value) {
   p->threadData->ethread->requestFullscreenMode(value);
+}
+
+bool Graphics::getBorderless() const {
+  return p->threadData->ethread->getBorderless();
+}
+
+void Graphics::setBorderless(bool value) {
+  p->threadData->ethread->requestBorderless(value);
 }
 
 bool Graphics::getShowCursor() const {

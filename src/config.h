@@ -71,6 +71,9 @@ struct Config {
     bool subImageFix;
     bool enableBlitting;
     int maxTextureSize;
+
+    bool borderlessDefault;
+    bool transparentDefault;
     
     struct {
         bool active;

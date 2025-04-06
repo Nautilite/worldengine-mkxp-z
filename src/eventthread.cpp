@@ -786,6 +786,16 @@ void EventThread::requestTerminate() {
   SDL_PushEvent(&event);
 }
 
+bool EventThread::checkBorderless(SDL_Window *win) {
+  Uint32 flags = SDL_GetWindowFlags(win);
+  return (flags & SDL_WINDOW_BORDERLESS) != 0;
+}
+
+void EventThread::setBorderless(SDL_Window *win, bool borderless) {
+  SDL_SetWindowBordered(win, borderless ? SDL_FALSE : SDL_TRUE);
+}
+
+
 void EventThread::requestFullscreenMode(bool mode) {
   if (mode == fullscreen)
     return;

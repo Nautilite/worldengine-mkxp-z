@@ -166,6 +166,8 @@ void Config::read(int argc, char *argv[]) {
 #else
         {"enableBlitting", true},
 #endif
+        {"borderlessDefault", false},
+        {"transparentDefault", false},
         {"integerScalingActive", false},
         {"integerScalingLastMile", true},
         {"maxTextureSize", 0},
