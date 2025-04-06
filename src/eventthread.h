@@ -113,6 +113,7 @@ public:
 
   void requestTerminate();
 
+  bool getBorderless() const;
   bool getFullscreen() const;
   bool getShowCursor() const;
   bool getControllerConnected() const;
@@ -131,6 +132,7 @@ private:
   static bool eventFilter(void *, SDL_Event *);
 
   void resetInputStates();
+  void setBorderless(SDL_Window *, bool mode);
   void setFullscreen(SDL_Window *, bool mode);
   void updateCursorState(bool inWindow, const SDL_Rect &screen);
   void cursorTimer();
