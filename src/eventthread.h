@@ -113,7 +113,7 @@ public:
 
   void requestTerminate();
 
-  bool getBorderless() const;
+  bool getBorderless(SDL_Window *) const;
   bool getFullscreen() const;
   bool getShowCursor() const;
   bool getControllerConnected() const;
