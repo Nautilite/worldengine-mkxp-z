@@ -801,11 +801,10 @@ void EventThread::requestFullscreenMode(bool mode) {
   event.user.code = static_cast<Sint32>(mode);
   SDL_PushEvent(&event);
 }
-
 void EventThread::requestBorderlessMode(bool mode) {
   if (mode == borderless)
     return;
-  setBorderless(shState->sdlWindow, mode);
+  setBorderless(shState->sdlWindow(), mode);
 }
 
 void EventThread::requestWindowResize(int width, int height) {
