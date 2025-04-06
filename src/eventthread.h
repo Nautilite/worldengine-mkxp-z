@@ -113,7 +113,7 @@ public:
 
   void requestTerminate();
 
-  bool getBorderless(SDL_Window *) const;
+  bool getBorderless() const;
   bool getFullscreen() const;
   bool getShowCursor() const;
   bool getControllerConnected() const;
@@ -138,6 +138,7 @@ private:
   void cursorTimer();
 
   bool fullscreen;
+  bool borderless;
   bool showCursor;
 
   SDL_Gamepad *ctrl;
