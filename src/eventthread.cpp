@@ -788,9 +788,9 @@ void EventThread::requestTerminate() {
 
 bool EventThread::getBorderless() const { return borderless; }
 
-void EventThread::setBorderless(SDL_Window *win, bool borderless) {
-  SDL_SetWindowBordered(win, borderless);
-  borderless = borderless;
+void EventThread::setBorderless(SDL_Window *win, bool mode) {
+  SDL_SetWindowBordered(win, mode);
+  borderless = mode;
 }
 
 
