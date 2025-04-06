@@ -1797,7 +1797,7 @@ bool Graphics::getBorderless() const {
 }
 
 void Graphics::setBorderless(bool value) {
-  p->threadData->ethread->setBorderless(value);
+  p->threadData->ethread->requestBorderless(value);
 }
 
 bool Graphics::getShowCursor() const {

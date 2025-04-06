@@ -786,8 +786,6 @@ void EventThread::requestTerminate() {
   SDL_PushEvent(&event);
 }
 
-bool EventThread::getBorderless() const { return borderless; }
-
 void EventThread::setBorderless(SDL_Window *win, bool mode) {
   SDL_SetWindowBordered(win, mode);
   borderless = mode;
@@ -802,6 +800,13 @@ void EventThread::requestFullscreenMode(bool mode) {
   event.type = usrIdStart + REQUEST_SETFULLSCREEN;
   event.user.code = static_cast<Sint32>(mode);
   SDL_PushEvent(&event);
+}
+
+void EventThread::requestBorderlessMode(bool mode) {
+  if (mode == borderless)
+    return;
+    
+  self->setBorderless(shState->window(), mode);
 }
 
 void EventThread::requestWindowResize(int width, int height) {
@@ -909,6 +914,8 @@ void EventThread::showMessageBox(const char *body, int flags) {
   /* Prevent endless loops */
   resetInputStates();
 }
+
+bool EventThread::getBorderless() const { return borderless; }
 
 bool EventThread::getFullscreen() const { return fullscreen; }
 
