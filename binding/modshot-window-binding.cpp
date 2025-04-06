@@ -108,8 +108,8 @@ RB_METHOD(SetBorderless) {
 
 RB_METHOD(GetBorderless) {
   RB_UNUSED_PARAM
-  shState->graphics().getBorderless();
-  return rb_bool_new(state);
+  bool val = shState->graphics().getBorderless();
+  return rb_bool_new(val);
 }
 
 
