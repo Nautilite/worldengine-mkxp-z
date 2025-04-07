@@ -102,7 +102,7 @@ RB_METHOD(WindowRaise) {
 RB_METHOD(SetBorderless) {
   bool state;
   rb_get_args(argc, argv, "b", &state);
-  shState->graphics().setBorderless(state);
+  shState->graphics().setBorderless(!state);
   return Qnil;
 }
 
