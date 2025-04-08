@@ -1,10 +1,26 @@
 ### What is this?
+This is a Fork of MKXP-Z which in of itself is a Fork of Ancurio's MKXP, merged with a mixture of contributions from RKevin/MelodyRS's ModShot, which itself a fork of MKXP-OneShot.
+My aim with this fork is to re-generalize certain aspects of MKXP-Z-ModShot for other non OneShot mods while keeping the steroid functionality offered in the parent fork.
+Also with the generalization still contribute personalized features for my current MKXP project that requires the extra tools.
+#### Why worldengine?
+WorldEngine is the name of my RGSS stock script replacement that is powered by worldengine-mkxp-z.
+Currently that project hinges on the use of the VX-Ace editor for its map format but in the future will likely migrate to Luminol.
 
+WorldEngine was made in response to 5 years of agony fighting the RPGMaker scriptbase, and is purpose is to provide creative freedom to make games in MKXP without trying to also conforming to the RGSS Scripts or even being compatible at all with them.
+WorldEngine-MKXP-Z will still work as a drag amd drop replacement for RGSS projects, but the scripts its used for 
+(which may possibly get packaged into this repository in the future on completion)
+are on their own incompatible with replacing a RPGMaker Projects scripts, and could not be used with maps from a normal RPGMakerXP/VX project.
+
+### What's new in this fork?
+- ModWindow.borderless
+- BorderlessDefault & TransparentDefault options in MKXP.json
+
+### OG Description:
 This is a fork of mkxp-z that contains (most) of the functionality of modshot/mkxp-oneshot. There is some missing modshot functionality but it SHOULD be a drag and drop replacement with no crashes. Please file an issue if you encounter a crash!
 
 Feel free to use this in place of modshot, but do be aware that this is aimed more at fading memory so you might have to do some configuration to get it working right.
 
-## What doesn't work like modshot
+#### What doesn't work like modshot
 
 **Most* of modshot's functionality is here, but some of it *isn't*. Stuff that isn't ported from modshot have dummy functions so your game won't crash, but they won't do anything.
 
