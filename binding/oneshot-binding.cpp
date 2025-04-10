@@ -168,7 +168,7 @@ void oneshotBindingInit() {
   // Functions
   _rb_define_module_function(module, "set_yes_no", oneshotSetYesNo);
   _rb_define_module_function(module, "msgbox", oneshotMsgBox);
-  // _rb_define_module_function(module, "textinput", oneshotTextInput);
+  _rb_define_module_function(module, "textinput", oneshotTextInput);
   _rb_define_module_function(module, "reset_obscured", oneshotResetObscured);
   _rb_define_module_function(module, "obscured_cleared?",
                              oneshotObscuredCleared);

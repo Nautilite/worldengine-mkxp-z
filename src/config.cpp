@@ -377,7 +377,7 @@ bool Config::fontIsSolid(const char *fontName) const {
 }
 
 void Config::readGameINI() {
-    /*
+    
     if (!customScript.empty()) {
         game.title = customScript.c_str();
         
@@ -451,12 +451,7 @@ void Config::readGameINI() {
                 rgssVersion = 3;
         }
     }
-    */
-
-    // Hardcode game and RGSS version settings for only modshot
-    rgssVersion = 1;
-    game.title = "OneShot";
-    game.scripts = "Data/xScripts.rxdata";
+    
 
     if (dataPathOrg.empty())
         dataPathOrg = ".";
