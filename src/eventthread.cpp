@@ -168,8 +168,6 @@ void EventThread::process(RGSSThreadData &rtData) {
 
   bool displayingFPS = rtData.config.displayFPS;
 
-  bool acceptingTextInput = false;
-
   if (displayingFPS || rtData.config.printFPS)
     fps.sendUpdates.set();
 

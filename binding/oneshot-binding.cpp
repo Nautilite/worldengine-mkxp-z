@@ -27,21 +27,21 @@ RB_METHOD(oneshotMsgBox) {
   return rb_bool_new(shState->oneshot().msgbox(type, body, title));
 }
 
-RB_METHOD(oneshotTextInput) {
-  RB_UNUSED_PARAM;
-  VALUE prompt;
-  int char_limit = 100;
-  VALUE font = Qnil;
-  rb_get_args(argc, argv, "S|iS", &prompt, &char_limit, &font RB_ARG_END);
-  std::string promptStr = std::string(RSTRING_PTR(prompt),
-  RSTRING_LEN(prompt)); std::string fontStr =
-      (font == Qnil) ? "" : std::string(RSTRING_PTR(font),
-      RSTRING_LEN(font));
-  return rb_str_new2(
-      shState->oneshot()
-          .textinput(promptStr.c_str(), char_limit, fontStr.c_str())
-          .c_str());
-}
+// RB_METHOD(oneshotTextInput) {
+//   RB_UNUSED_PARAM;
+//   VALUE prompt;
+//   int char_limit = 100;
+//   VALUE font = Qnil;
+//   rb_get_args(argc, argv, "S|iS", &prompt, &char_limit, &font RB_ARG_END);
+//   std::string promptStr = std::string(RSTRING_PTR(prompt),
+//   RSTRING_LEN(prompt)); std::string fontStr =
+//       (font == Qnil) ? "" : std::string(RSTRING_PTR(font),
+//       RSTRING_LEN(font));
+//   return rb_str_new2(
+//       shState->oneshot()
+//           .textinput(promptStr.c_str(), char_limit, fontStr.c_str())
+//           .c_str());
+// }
 
 RB_METHOD(oneshotResetObscured) {
   RB_UNUSED_PARAM;

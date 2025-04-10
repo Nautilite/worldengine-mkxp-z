@@ -500,42 +500,42 @@ bool Oneshot::msgbox(int type, const char *body, const char *title) {
 }
 
 // not used anywhere or provided by modshot
-std::string Oneshot::textinput(const char* prompt, int char_limit, const
-char* fontName) {
-  std::vector<std::string> *fontNames = new std::vector<std::string>();
-  fontNames->push_back(fontName);
-  fontNames->push_back("VL Gothic");
-  Font *font = new Font(fontNames, 18);
+// std::string Oneshot::textinput(const char* prompt, int char_limit, const
+// char* fontName) {
+//   std::vector<std::string> *fontNames = new std::vector<std::string>();
+//   fontNames->push_back(fontName);
+//   fontNames->push_back("VL Gothic");
+//   Font *font = new Font(fontNames, 18);
 
-  Bitmap *promptBmp = new Bitmap(DEF_SCREEN_W, DEF_SCREEN_H);
-  promptBmp->setInitFont(font);
-  promptBmp->drawText(0, 0, DEF_SCREEN_W, DEF_SCREEN_H, prompt, 1);
+//   Bitmap *promptBmp = new Bitmap(DEF_SCREEN_W, DEF_SCREEN_H);
+//   promptBmp->setInitFont(font);
+//   promptBmp->drawText(0, 0, DEF_SCREEN_W, DEF_SCREEN_H, prompt, 1);
 
-  Bitmap *inputBmp = new Bitmap(DEF_SCREEN_W, DEF_SCREEN_H);
-  inputBmp->setInitFont(font);
-  inputBmp->drawText(0, 0, DEF_SCREEN_W, DEF_SCREEN_H, "", 1);
+//   Bitmap *inputBmp = new Bitmap(DEF_SCREEN_W, DEF_SCREEN_H);
+//   inputBmp->setInitFont(font);
+//   inputBmp->drawText(0, 0, DEF_SCREEN_W, DEF_SCREEN_H, "", 1);
 
-  std::string inputTextPrev = std::string("");
-  threadData.acceptingTextInput.set();
-  threadData.inputTextLimit = char_limit;
-  threadData.inputText.clear();
-  SDL_StartTextInput();
+//   std::string inputTextPrev = std::string("");
+//   threadData.acceptingTextInput.set();
+//   threadData.inputTextLimit = char_limit;
+//   threadData.inputText.clear();
+//   SDL_StartTextInput();
 
-  // Main loop
-  while (threadData.acceptingTextInput) {
-    if (inputTextPrev != threadData.inputText) {
-      inputBmp->clear();
-      inputBmp->drawText(DEF_SCREEN_W / 2, DEF_SCREEN_H / 2, DEF_SCREEN_W,
-      DEF_SCREEN_H, threadData.inputText.c_str(), 1); inputTextPrev =
-      threadData.inputText;
-    }
-  }
+//   // Main loop
+//   while (threadData.acceptingTextInput) {
+//     if (inputTextPrev != threadData.inputText) {
+//       inputBmp->clear();
+//       inputBmp->drawText(DEF_SCREEN_W / 2, DEF_SCREEN_H / 2, DEF_SCREEN_W,
+//       DEF_SCREEN_H, threadData.inputText.c_str(), 1); inputTextPrev =
+//       threadData.inputText;
+//     }
+//   }
 
-  // Disable text input
-  SDL_StopTextInput();
+//   // Disable text input
+//   SDL_StopTextInput();
 
-  return threadData.inputText;
-}
+//   return threadData.inputText;
+// }
 
 void Oneshot::setWindowPos(int x, int y) {
   SDL_LockMutex(p->winMutex);
