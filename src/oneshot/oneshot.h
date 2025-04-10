@@ -78,8 +78,8 @@ public:
 
   // Functions
   bool msgbox(int type, const char *body, const char *title);
-  // std::string textinput(const char* prompt, int char_limit, const char*
-  // fontName);
+  std::string textinput(const char* prompt, int char_limit, const char*
+  fontName);
 
   // Dirty flag for obscured texture
   bool obscuredDirty;
